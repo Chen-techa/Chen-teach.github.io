@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Chenk">
+    
+    <title>
+        
+            React基础（一） |
+        
+        Chenk`Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/basketball.png">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/icon.jpg","favicon":"/images/basketball.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"I wanna be the one you always can rely on  ——Gentleman"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Chenk`Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                友链
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">友链</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">React基础（一）</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/icon.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Chenk</span>
+                        
+                            <span class="author-label">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-11-01 19:02:03
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/React/">React</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/React/">React</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="React简介"><a href="#React简介" class="headerlink" title="React简介"></a>React简介</h2><h3 id="1-是什么？"><a href="#1-是什么？" class="headerlink" title="1.是什么？"></a>1.是什么？</h3><p>React是用于构建用户界面的JavaScript库</p>
+<p>界面-&gt;视图（关注视图）</p>
+<p>1.1 发送请求获取数据</p>
+<p>1.2 处理数据（过滤，整理格式）</p>
+<p>1.3 操作DOM呈现页面</p>
+<p>是一个将数据渲染为HTML试图的开源JavaScript库</p>
+<h3 id="2-谁开发的"><a href="#2-谁开发的" class="headerlink" title="2.谁开发的"></a>2.谁开发的</h3><p>是由Facebook开发且开源</p>
+<h3 id="3-为什么学React"><a href="#3-为什么学React" class="headerlink" title="3.为什么学React"></a>3.为什么学React</h3><p>3.1 原生JavaScript操作DOM 繁琐、效率低下（<code>DOM-API操作UI</code>）<code>比如：计时器操作盒子变换颜色</code></p>
+<p>3.2 使用JavaScript直接操作DOM，浏览器会进行大量的<code>重绘重排</code>。</p>
+<p>3.3原生JavaScript没有<code>组件化</code>编码方案，代码复用率低</p>
+<p>3.3.1<code>组件化</code> ：html/css/js（一拆到底）</p>
+<h3 id="4-React的特点"><a href="#4-React的特点" class="headerlink" title="4.React的特点"></a>4.React的特点</h3><p>4.1采用<code>组件化</code>模式、<code>声明式编码</code>,蹄盖哦就开发效率及组件复用率</p>
+<p>4.1.1<code>声明式编码</code>:不用亲历亲为（学习语法）</p>
+<p>4.2在React Native中可以使用React语法进行<code>移动端开发</code></p>
+<p>4.3使用<code>虚拟DOM</code>+优秀的 <code>Diffing算法</code>，尽量减少与真实DOM进行交互</p>
+<h3 id="5-学习React之前掌握的JavaScript的基础知识"><a href="#5-学习React之前掌握的JavaScript的基础知识" class="headerlink" title="5.学习React之前掌握的JavaScript的基础知识"></a>5.学习React之前掌握的JavaScript的基础知识</h3><p>5.1判断this的指向</p>
+<p>5.2class（类）</p>
+<p>5.3ES6的语法规范</p>
+<p>5.4npm包管理器</p>
+<p>5.5原型、原型链</p>
+<p>5.6数组常用方法模块化</p>
+<h2 id="React第一个案例Hello-React"><a href="#React第一个案例Hello-React" class="headerlink" title="React第一个案例Hello React"></a>React第一个案例Hello React</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello React<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 准备一个容器 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;test&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 引入React核心库 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;../js/react.development.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 引入react-dome,用于支持react操作dom --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;../js//react-dom.development.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 引入bable,用于将jsx转化为js --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;../js/babel.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- /*此处一定要写bable*/ --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/babel&quot;</span>&gt;</span><span class="javascript"> </span></span><br><span class="line"><span class="javascript">        <span class="comment">//写jsx脚本</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">//创建虚拟dom</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> VDOM = <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello React<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span> <span class="comment">/*此处一定不要写&#x27;&#x27;*/</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">//渲染虚拟dom到页面</span></span></span><br><span class="line"><span class="javascript">        ReactDOM.render(VDOM,<span class="built_in">document</span>.getElementById(<span class="string">&#x27;test&#x27;</span>)) <span class="comment">//参数1 虚拟DOM 参数2 容器</span></span></span><br><span class="line"><span class="javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="虚拟DOM"><a href="#虚拟DOM" class="headerlink" title="虚拟DOM"></a>虚拟DOM</h2><h3 id="虚拟DOM的两种创建方式JSX-amp-JS"><a href="#虚拟DOM的两种创建方式JSX-amp-JS" class="headerlink" title="虚拟DOM的两种创建方式JSX&amp;JS"></a>虚拟DOM的两种创建方式JSX&amp;JS</h3><p>JSX更加简单的创建虚拟DOM</p>
+<p>JSX其实就是原始创建虚拟DOM的语法糖，更加便捷</p>
+<h3 id="虚拟DOM与真实DOM"><a href="#虚拟DOM与真实DOM" class="headerlink" title="虚拟DOM与真实DOM"></a>虚拟DOM与真实DOM</h3><p>关于虚拟DOM：</p>
+<p>​      1.本质上是Object类型的对象（一般对象）</p>
+<p>​      2.虚拟DOM比较‘轻’,真实DOM比较‘重’：因为虚拟DOM是React内部在使用，无需真实DOM上那么多的属性</p>
+<p>​      3.虚拟DOM最终会被React转化为真实DOM呈现在页面之上</p>
+<h2 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h2><h3 id="JSX语法规则"><a href="#JSX语法规则" class="headerlink" title="JSX语法规则"></a>JSX语法规则</h3><ol>
+<li><p>全称：JavaScript XML</p>
+</li>
+<li><p>React定义的一种类似于XML的JS扩展语法：JS+XML</p>
+<ul>
+<li>XML早期用于存储和传输数据</li>
+</ul>
+</li>
+<li><p>本质是：React.createElement(component，props，….children)</p>
+</li>
+<li><p>作用：用来简化创建的虚拟DOM：</p>
+<ul>
+<li>写法：<code>var ele = &lt;h1&gt;Hello ReactJSX&lt;/h1&gt;</code></li>
+<li>注意：他不是字符串，也不是HTML/XML标签</li>
+<li>他最终生产的是一个JS对象</li>
+</ul>
+</li>
+<li><p>标签名任意：HTML标签或其他标签</p>
+</li>
+<li><p> JSX语法规则：</p>
+</li>
+</ol>
+<p>   ​      1.定义虚拟DOM不要写‘’</p>
+<p>   ​      2.标签中混入JS表达式时要用{}</p>
+<p>   ​      3.样式的类名指定不能使用class 需要使用className</p>
+<p>   ​      4.内联样式要使用<code>style=&#123;&#123; key:'value' &#125;&#125;</code>这种形式</p>
+<p>   ​      5.虚拟DOM必须只有一个跟标签</p>
+<p>   ​      6.标签必须闭合</p>
+<p>   ​      7.关于标签首字母</p>
+<p>   ​            1）若小写字母开头，则将该标签转为html中的同名标签，若无该标签对应的同名元素，则报错</p>
+<p>   ​            2）若大写字母开头，React就去渲染对应的组件，若组件没有定义，报错</p>
+<h3 id="JSX的小练习"><a href="#JSX的小练习" class="headerlink" title="JSX的小练习"></a>JSX的小练习</h3><p>   代码<br>   <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">   <span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">title</span>&gt;</span>JSX的小练习<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 准备一个容器 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;test&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 引入React核心库 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;../js/react.development.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 引入react-dome,用于支持react操作dom --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;../js//react-dom.development.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 引入bable,用于将jsx转化为js --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;../js/babel.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- /*此处一定要写bable*/ --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/babel&quot;</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">   <span class="comment">//1.创建虚拟DOM</span></span></span><br><span class="line"><span class="javascript">   <span class="keyword">const</span> VDOM = (</span></span><br><span class="line"><span class="javascript">           <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="xml"><span class="javascript">              <span class="tag">&lt;<span class="name">h1</span>&gt;</span>前端框架列表<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span></span><br><span class="line"><span class="xml"><span class="javascript">              <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span></span><br><span class="line"><span class="xml"><span class="javascript">                 <span class="tag">&lt;<span class="name">li</span>&gt;</span>Angulr<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span></span><br><span class="line"><span class="xml"><span class="javascript">                 <span class="tag">&lt;<span class="name">li</span>&gt;</span>Angulr<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span></span><br><span class="line"><span class="xml"><span class="javascript">                 <span class="tag">&lt;<span class="name">li</span>&gt;</span>Angulr<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span></span><br><span class="line"><span class="xml"><span class="javascript">              <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span></span><br><span class="line"><span class="xml"><span class="javascript">           <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span></span><br><span class="line"><span class="javascript">   )</span></span><br><span class="line"><span class="javascript">   <span class="comment">//2.渲染虚拟DOM到页面上</span></span></span><br><span class="line"><span class="javascript">   ReactDOM.render(VDOM,<span class="built_in">document</span>.getElementById(<span class="string">&#x27;test&#x27;</span>));</span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><br>注意：注意区分【js语句（代码）】和【js的表达式】</p>
+<pre><code>  ​  1. 表达式：一个表达式会产生一个值，可以放在需要值的地方
+              下面这些都是表达式：
+                 a
+                 a+b 
+                 demo(1)  
+                 arr.map()
+                 function test()&#123;&#125;
+  ​  2. 语句（代码）：
+              下面这些都是语句（代码）
+                 if()&#123;&#125;
+                 for()&#123;&#125;
+                 switch()&#123;case:xxx;&#125;
+</code></pre>
+<h3 id="模块化组件化、模块与组件的理解"><a href="#模块化组件化、模块与组件的理解" class="headerlink" title="模块化组件化、模块与组件的理解"></a>模块化组件化、模块与组件的理解</h3><h4 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h4><pre><code>  1.理解：向外提供一个 特定功能的JS程序，一般就是一个JS文件
+  
+  2.为什么要拆分成模块：随着业务逻辑，代码与来越复杂
+
+  3. 作用：复用JS，简化JS的编写，提高JS运行的效率
+</code></pre>
+<h4 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h4><pre><code>  1. 理解：用来实现局部功能效果代码和资源的集合（HTML/CSS/IMAGE）
+
+  2. 为什么要使用组件：一个界面的功能更复杂，使用组件可以减少这中复杂的情况
+
+  3. 作用：复用编码，简化项目，提高代码运行效率
+</code></pre>
+<h4 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h4><pre><code>  当应用的JS都以模块来写的时候，这个应用就是一个模块化的应用
+</code></pre>
+<h4 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h4><pre><code>  当应用是以组件的方式实现的时候。这个应用就是一个组件化的应用
+</code></pre>
+<h2 id="React面向对象的编程"><a href="#React面向对象的编程" class="headerlink" title="React面向对象的编程"></a>React面向对象的编程</h2><h3 id="基本理解与使用"><a href="#基本理解与使用" class="headerlink" title="基本理解与使用"></a>基本理解与使用</h3><p>   使用React开发者测试工具调式：React Developer Tools</p>
+<h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><pre><code>  1.组件的首字母大写
+
+  2.虚拟DOM元素有且只能有一个根元素
+
+  3.虚拟DOM元素必需要有结束的标签，又开始有结束
+</code></pre>
+<h3 id="渲染类组件标签的基本流程"><a href="#渲染类组件标签的基本流程" class="headerlink" title="渲染类组件标签的基本流程"></a>渲染类组件标签的基本流程</h3><pre><code>  1.React内部会创建组件的实例对象
+
+  2.调用render（）得到的虚拟DOM，并解析为真是DOM
+
+  3.插入到指定的页面元素内部
+</code></pre>
+<h3 id="组件的三大核心属性"><a href="#组件的三大核心属性" class="headerlink" title="组件的三大核心属性"></a>组件的三大核心属性</h3><h4 id="state"><a href="#state" class="headerlink" title="state"></a>state</h4><h5 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h5><pre><code>  1.state是组件对象最重要的属性，值是对象（可以包含多个key-value的组合）
+
+  2.组件被称为“状态机”，通过更新组件的state来更新对应的页面显示（重新渲染组件）
+</code></pre>
+<h5 id="注意：-1"><a href="#注意：-1" class="headerlink" title="注意："></a>注意：</h5><pre><code>  1.组件中的render方法中的this为组件的实例对象
+
+  2.组件自定义的方法中的this为undefind
+
+        a.强制绑定this：通过函数对象的bind（）
+
+        b.箭头函数
+
+  3.状态数据，不能直接修改或更新
+</code></pre>
+<h4 id="props"><a href="#props" class="headerlink" title="props"></a>props</h4><h5 id="理解："><a href="#理解：" class="headerlink" title="理解："></a>理解：</h5><pre><code>  1.每个组件对象都会有porps（properties的简写）属性
+
+  2.组件标签的所有属性都保存在props中
+</code></pre>
+<h5 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h5><pre><code>  1.通过标签属性从组件外向组件内传递变化的数据
+
+  2.注意：组件内部不要修改props的数据
+</code></pre>
+<h4 id="编码操作"><a href="#编码操作" class="headerlink" title="编码操作"></a>编码操作</h4><h5 id="内部读取某个属性的值"><a href="#内部读取某个属性的值" class="headerlink" title="内部读取某个属性的值"></a>内部读取某个属性的值</h5><pre><code>  this.props.name
+</code></pre>
+<h5 id="对props中的属性值进行类型限制和必要限制"><a href="#对props中的属性值进行类型限制和必要限制" class="headerlink" title="对props中的属性值进行类型限制和必要限制"></a>对props中的属性值进行类型限制和必要限制</h5><p>使用prop-types库进限制（需要引入prop-types库）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Person.propTypes = &#123; </span><br><span class="line">    name: React.propTypes.string.isRequired,</span><br><span class="line">    age:React.propTypes.number</span><br></pre></td></tr></table></figure>
+<p>扩展属性：将对象的所有属性值，通过props进行传递</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Person&#123;....person&#125;/&gt;</span><br></pre></td></tr></table></figure>
+
+<p>默认属性值：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Person.defultProps = &#123;</span><br><span class="line">    age:1,</span><br><span class="line">    sex:&#x27;男&#x27;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>组件类的构造函数</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">constructor(props)&#123;</span><br><span class="line">    super(props)</span><br><span class="line">    console.log(props)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：React基础（一）</li>
+        <li>本文作者：Chenk</li>
+        <li>创建时间：2021-11-01 19:02:03</li>
+        <li>
+            本文链接：https://keep.xpoet.cn/2021/11/01/React基础（一）/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/11/01/%E5%89%8D%E7%AB%AF%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">前端总结（一）</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script data-pjax
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script data-pjax>
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: '5KCFvdrizTHERLQmi7Dk2cMJ-gzGzoHsz',
+                    appKey: '49ovSQNR43snIgtirtsr3boS',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '欢迎评论，受教！！！',
+                    lang: 'zh-CN'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'Chenk';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('true') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2021</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Chenk</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+            <div class="icp-info info-item"><a target="_blank" rel="nofollow" href="https://beian.miit.gov.cn">津ICP备2021007252号</a></div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#React%E7%AE%80%E4%BB%8B"><span class="nav-text">React简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-text">1.是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E8%B0%81%E5%BC%80%E5%8F%91%E7%9A%84"><span class="nav-text">2.谁开发的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%AD%A6React"><span class="nav-text">3.为什么学React</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-React%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-text">4.React的特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%AD%A6%E4%B9%A0React%E4%B9%8B%E5%89%8D%E6%8E%8C%E6%8F%A1%E7%9A%84JavaScript%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-text">5.学习React之前掌握的JavaScript的基础知识</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%A1%88%E4%BE%8BHello-React"><span class="nav-text">React第一个案例Hello React</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%99%9A%E6%8B%9FDOM"><span class="nav-text">虚拟DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%99%9A%E6%8B%9FDOM%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%88%9B%E5%BB%BA%E6%96%B9%E5%BC%8FJSX-amp-JS"><span class="nav-text">虚拟DOM的两种创建方式JSX&amp;JS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%99%9A%E6%8B%9FDOM%E4%B8%8E%E7%9C%9F%E5%AE%9EDOM"><span class="nav-text">虚拟DOM与真实DOM</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSX"><span class="nav-text">JSX</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JSX%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99"><span class="nav-text">JSX语法规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSX%E7%9A%84%E5%B0%8F%E7%BB%83%E4%B9%A0"><span class="nav-text">JSX的小练习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BB%84%E4%BB%B6%E5%8C%96%E3%80%81%E6%A8%A1%E5%9D%97%E4%B8%8E%E7%BB%84%E4%BB%B6%E7%9A%84%E7%90%86%E8%A7%A3"><span class="nav-text">模块化组件化、模块与组件的理解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A8%A1%E5%9D%97"><span class="nav-text">模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6"><span class="nav-text">组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A8%A1%E5%9D%97%E5%8C%96"><span class="nav-text">模块化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E5%8C%96"><span class="nav-text">组件化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%BC%96%E7%A8%8B"><span class="nav-text">React面向对象的编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%90%86%E8%A7%A3%E4%B8%8E%E4%BD%BF%E7%94%A8"><span class="nav-text">基本理解与使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%EF%BC%9A"><span class="nav-text">注意：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%B2%E6%9F%93%E7%B1%BB%E7%BB%84%E4%BB%B6%E6%A0%87%E7%AD%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B"><span class="nav-text">渲染类组件标签的基本流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E7%9A%84%E4%B8%89%E5%A4%A7%E6%A0%B8%E5%BF%83%E5%B1%9E%E6%80%A7"><span class="nav-text">组件的三大核心属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#state"><span class="nav-text">state</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%90%86%E8%A7%A3"><span class="nav-text">理解</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%EF%BC%9A-1"><span class="nav-text">注意：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#props"><span class="nav-text">props</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%90%86%E8%A7%A3%EF%BC%9A"><span class="nav-text">理解：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%EF%BC%9A"><span class="nav-text">作用：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%96%E7%A0%81%E6%93%8D%E4%BD%9C"><span class="nav-text">编码操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%86%85%E9%83%A8%E8%AF%BB%E5%8F%96%E6%9F%90%E4%B8%AA%E5%B1%9E%E6%80%A7%E7%9A%84%E5%80%BC"><span class="nav-text">内部读取某个属性的值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AF%B9props%E4%B8%AD%E7%9A%84%E5%B1%9E%E6%80%A7%E5%80%BC%E8%BF%9B%E8%A1%8C%E7%B1%BB%E5%9E%8B%E9%99%90%E5%88%B6%E5%92%8C%E5%BF%85%E8%A6%81%E9%99%90%E5%88%B6"><span class="nav-text">对props中的属性值进行类型限制和必要限制</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>

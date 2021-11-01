@@ -9,7 +9,7 @@
     
     <title>
         
-            JavaScriptES6（Day2） |
+            前端总结（一） |
         
         Chenk`Blog
     </title>
@@ -184,7 +184,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">JavaScriptES6（Day2）</span>
+            <span class="title-hover-animation">前端总结（一）</span>
         </div>
 
         
@@ -202,7 +202,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-10-03 17:05:56
+        <i class="fas fa-edit"></i>&nbsp;2021-11-01 18:59:29
     </span>
     
         <span class="article-categories article-meta-item">
@@ -210,7 +210,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/JavaScript/">JavaScript</a>&nbsp;
+                        <a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>&nbsp;
                     </li>
                 
             </ul>
@@ -222,7 +222,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/JavaScript/">JavaScript</a>&nbsp;
+                        <a href="/tags/%E5%89%8D%E7%AB%AF/">前端</a>&nbsp;
                     </li>
                 
             </ul>
@@ -245,43 +245,37 @@
         
 
         <div class="article-content markdown-body">
-            <h3 id="字符串扩展—多行字符串"><a href="#字符串扩展—多行字符串" class="headerlink" title="字符串扩展—多行字符串"></a>字符串扩展—多行字符串</h3><p>单行字符串：由一组单引号或者双引号定义的字符串</p>
-<p>单行字符串的问题：</p>
-<ol>
-<li>单行字符串不能换行</li>
-<li>一些特殊的字符串要使用转义字符\n</li>
-<li>一些特殊的字符串要使用转义字符\x20</li>
-<li>字符串不能直接使用嵌套</li>
-</ol>
-<p>单引号中不能直接写单引号，要转义\‘ </p>
-<p>双引号中不能直接写双引号，要转义 \ “</p>
-<p>ES6为了解决单行字符串中的问题，提供了多行字符串，通过 <code>   定义，在多行字符串中，只有</code>需要转义`，<br>其他字符可以自由书写<br>并且ES6多行字符串支持插值语法：${key}<br>${}提供了js环境，因此我们可以写js表达式<br>ES6的插值语法，让其他框架的插值语法的重要性，大打折扣</p>
-<h3 id="字符穿拓展—-原始字符串"><a href="#字符穿拓展—-原始字符串" class="headerlink" title="字符穿拓展—-原始字符串"></a>字符穿拓展—-原始字符串</h3><p>在使用了转义字符串之后，并且在浏览器查看的时候，我们只能看到结果，不能看到原始完整的字符串（包含转移字符），于是在ES6中拓展了String.raw方法用于查看原始字符串</p>
-<p>使用方法：   <code>Sring.raw</code>参数通过字符串的形式进行传递，字符串中的转义字符串不会被转义</p>
-<p>例：<code>let str = String.raw&#39;hello \nic\nkt&#39;; console.log(str); </code>打印出的结果就是原始的字符串<code>hello \nic\nkt</code></p>
-<p>同时对于普通的字符串不让\n生效就需要改变成 \ \n</p>
-<h3 id="字符串拓展—重复字符串"><a href="#字符串拓展—重复字符串" class="headerlink" title="字符串拓展—重复字符串"></a>字符串拓展—重复字符串</h3><p>ES6中扩展了repeat方法用于重复输出字符串</p>
-<p>​    参数就是要重复的次数</p>
-<p>​    返回值就是重复的结果</p>
-<p>​    对原始字符串没有影响</p>
-<p>例：<code>let str=&#39;hello||&#39;; console.log(str.repeat(3)); console.log(str);</code>打印出来的结果分别就是 <code>hello || hello || hello||</code> <code>hello ||</code></p>
-<h3 id="字符串拓展–判断字符串的位置"><a href="#字符串拓展–判断字符串的位置" class="headerlink" title="字符串拓展–判断字符串的位置"></a>字符串拓展–判断字符串的位置</h3><ol>
-<li>startsWith(str,pos)     是否以参数字符串开头</li>
-</ol>
-<p>​    截取后面的部分，并且截取位置字符</p>
-<p>​    str 参数字符串（子字符串）</p>
-<p>​    pos    字符串截取位置</p>
-<p>​    返回值都是bool</p>
-<p>​    例：<code>let str=&quot;这是一个测试&quot;; console.log(str.startsWith(&#39;这&#39;))</code> <code> return : true</code></p>
-<p>​            <code>console.log(str.startWith(&#39;是&#39;);</code> <code>return : false</code></p>
-<ol start="2">
-<li>endsWith(str,pos)    是否以字符串结尾</li>
-</ol>
-<p>​    截取前面的部分，并且不包含截取位置字符</p>
-<ol start="3">
-<li>includes(str,pos)     是否包含参数字符串</li>
-</ol>
-<p>​    截取后面的部分，并且包含截取位置字符</p>
+            <h2 id="前端总结（一）"><a href="#前端总结（一）" class="headerlink" title="前端总结（一）"></a>前端总结（一）</h2><h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><p>HTML的语义化就是让页面的内容格式化，优点如下：</p>
+<pre><code>    1、易于用户阅读，样式丢失的时候能让页面呈现清晰的结构。
+    2、有利于SEO，搜索引擎根据标签来确定上下文和各个关键字的权重。
+    3、方便其他设备解析，如盲人阅读器根据语义渲染网页
+    4、有利于开发和维护，语义化更具可读性，代码更好维护，与CSS3关系更和谐
+</code></pre>
+<p>HTML的语义化标签</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span><span class="tag">&lt;/<span class="name">header</span>&gt;</span> //头部标签,用于展示自己页面的头部区域，包括网站的logo，网站的主导航···</span><br><span class="line"><span class="tag">&lt;<span class="name">nav</span>&gt;</span><span class="tag">&lt;/<span class="name">nav</span>&gt;</span> //定义页面的导航链接的部分区域，不是所有的导航链接都需要包裹在当中</span><br><span class="line"><span class="tag">&lt;<span class="name">main</span>&gt;</span><span class="tag">&lt;/<span class="name">main</span>&gt;</span> // main是用来存储页面的主体部分</span><br><span class="line"><span class="tag">&lt;<span class="name">aside</span>&gt;</span><span class="tag">&lt;/<span class="name">aside</span>&gt;</span> //aside 通常用来写页面的侧边栏</span><br><span class="line"><span class="tag">&lt;<span class="name">footer</span>&gt;</span><span class="tag">&lt;/<span class="name">footer</span>&gt;</span> //用来写页面的底部部分的信息，可以写备案号····</span><br><span class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span><span class="tag">&lt;/<span class="name">article</span>&gt;</span> //用来定义页面的独立内容，有自己的header，footer，setions</span><br><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span><span class="tag">&lt;/<span class="name">section</span>&gt;</span> //元素用于标记文档的各个部分，例如长表单文章的章节或主要部分。</span><br></pre></td></tr></table></figure>
+
+<p>HTML常用标签以及属性</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">input <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;&quot;</span>/&gt;</span> //用户的输入框，type可以定义很多的类型 password,text,hidden,button···</span><br><span class="line">a <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&quot;</span>&gt;</span> //a标签又被叫为链接标签，herf中可以是一个页面的地址，或者其他的地址···</span><br><span class="line">img  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span> //图像的标签，src中是一个图片的地址，alt中可以写当图片加载错误的时候现实的文字···</span><br><span class="line">h1~h6 <span class="tag">&lt;<span class="name">h1-6</span>&gt;</span><span class="tag">&lt;/<span class="name">h1-6</span>&gt;</span> //页面的标题标签，h1-h6文字的大小依次递减</span><br><span class="line">p <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span> //页面的段落标签，可以用来写文字···(一个块级标签，独占一行)</span><br><span class="line">span  //可以在p标签中使用，一个行内元素</span><br><span class="line">div //一个跨级标签，可以理解为一个大盒子，用来包裹一些东西</span><br><span class="line">table //表格的标签，含有border（边框），th（表头），tr（行），td（单元），col（表格的属性）</span><br><span class="line">ul li //无序的列表</span><br><span class="line">ol li //有序的列表</span><br><span class="line">form //表单</span><br><span class="line">button //按钮</span><br></pre></td></tr></table></figure>
+
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><p>CSS中的ID和class:在为某一标签添加样式时会使用到ID或者class<br>CSS可以分为内联，外联，嵌套式</p>
+<p><strong>内联</strong></p>
+<p>在html页的标签中header中添加</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>外联</strong></p>
+<p>在文件的根目录下创建后缀名为.css的文件</p>
+<p>通过<code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;*.css&quot; /&gt;</code>来进行外联</p>
+<p><strong>嵌套式</strong></p>
+<p>使用此方法可以再标签中直接添加，例：<code>&lt;p style=&quot;font-size:15;&quot;&gt;&lt;/p&gt;</code>，注：内联每一个属性之间以<code>;</code>隔开</p>
+<p><strong>@import</strong></p>
+<p><code>@import &quot;*.css&quot;;</code>用来引入CSS文件，使页面呈现出对应的效果</p>
+<p><strong>CSS四种引入样式的区别</strong></p>
+<p>1.行内样式只作用于当前标签。HTML页面不纯净，后期维护不方便。<br>2.内部样式作用于当前文件。CSS 代码写在 HTML 文档中，如果一个网站有很多 HTML 页面，每个文件都会变大，后期维护难度也大，如果 HTML 文件很少，CSS 代码也不多，也可以使用这种方式。<br>3.外部样式可以被多个 HTML 文件引用。实现了 HTML 代码与 CSS 的完全分离，使得前期开发和后期维护都十分方便。</p>
+<p>5.外部样式分为 <code>&lt;link&gt;</code> 引入和<code>@import</code> 引入两种方式。这两种方式的区别为：</p>
+<p><code>&lt;link&gt;</code> 是 <code>XHTML</code> 标签，除了可以加载 <code>CSS</code> 外，还可以定义 RSS 等其他事务，通过 <code>&lt;link&gt;</code> 标签中的 <code>href=&quot;&quot;</code> 属性来引入外部文件。<code>@import</code> 属于 <code>CSS</code> 范畴，只能加载 <code>CSS</code> ，应该写在 <code>CSS</code> 中，且导入语句应写在样式表的开头，否则无法正确导入外部文件。<br><code>&lt;link&gt;</code> 引用 <code>CSS</code> 时，在页面载入的时候可以同时加载样式，样式加载和结构加载是异步操作。可以防止访问网页时先加载完文字、图片等结构数据，然后再加载样式的问题。<code>@import</code> 需要网页结构完全载入以后加载样式文件。<br><code>&lt;link&gt;</code> 是 <code>XHTML</code> 标签，无兼容问题。<code>@import</code> 是在 CSS2.1 提出的，低版本浏览器不支持。<br><code>&lt;link&gt;</code> 支持使用 <code>JavaScript</code> 控制 <code>DOM</code> 来改变样式。<code>@import</code> 不支持。</p>
+<p><strong>4 种CSS 引用方式的优先级：</strong></p>
+<p>就近原则<br>内部样式、 <code>&lt;link&gt;</code> 链入外部样式表、 <code>@import</code> 导入外部样式表三种方式同时出现在 HTML 页面的 <code>&lt;head&gt;&lt;/head&gt;</code> 标签内时，谁离要修改样式的元素近，谁的优先级高<br>行内样式 &gt; 内部样式、  链入外部样式表、 @import 导入外部样式表</p>
+<p>在实际项目开发中，最好使用外部样式。符合解耦合的开发思想。想要修改某个字体或者样式，直接在 CSS 文件中修改，不需要修改 HTML 结构，页面变得更加容易维护，也有利于提升开发者的工作效率。</p>
 
         </div>
 
@@ -289,11 +283,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：JavaScriptES6（Day2）</li>
+        <li>本文标题：前端总结（一）</li>
         <li>本文作者：Chenk</li>
-        <li>创建时间：2021-10-03 17:05:56</li>
+        <li>创建时间：2021-11-01 18:59:29</li>
         <li>
-            本文链接：https://keep.xpoet.cn/2021/10/03/JavaScriptES6（Day2）/
+            本文链接：https://keep.xpoet.cn/2021/11/01/前端总结（一）/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -310,13 +304,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2021/11/01/%E5%89%8D%E7%AB%AF%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89/"
+                           href="/2021/11/01/React%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">前端总结（一）</span>
+                                <span class="post-nav-title-item">React基础（一）</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -326,10 +320,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/10/02/Let/"
+                           href="/2021/10/03/JavaScriptES6%EF%BC%88Day2%EF%BC%89/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Let Const Var</span>
+                                <span class="post-nav-title-item">JavaScriptES6（Day2）</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -547,7 +541,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%89%A9%E5%B1%95%E2%80%94%E5%A4%9A%E8%A1%8C%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-text">字符串扩展—多行字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E7%A9%BF%E6%8B%93%E5%B1%95%E2%80%94-%E5%8E%9F%E5%A7%8B%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-text">字符穿拓展—-原始字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%93%E5%B1%95%E2%80%94%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-text">字符串拓展—重复字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%93%E5%B1%95%E2%80%93%E5%88%A4%E6%96%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="nav-text">字符串拓展–判断字符串的位置</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89"><span class="nav-text">前端总结（一）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML"><span class="nav-text">HTML</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS"><span class="nav-text">CSS</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
